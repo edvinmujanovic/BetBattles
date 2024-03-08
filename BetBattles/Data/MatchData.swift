@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-struct EventData: Decodable {
+struct MatchData: Decodable {
     let id: String
     let sportKey: String
     let sportTitle: String
