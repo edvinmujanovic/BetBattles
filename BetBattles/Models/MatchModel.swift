@@ -5,11 +5,11 @@
 //  Created by Edvin Mujanovic on 2024-03-07.
 //
 
-
 import Foundation
 import Observation
 
 class MatchModel: Identifiable {
+    let id = UUID() // Provide a unique ID for SwiftUI's List
     let homeTeam: String
     let awayTeam: String
     let bookmaker: Bookmaker  // Include a reference to Bookmaker

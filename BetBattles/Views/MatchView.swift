@@ -7,7 +7,7 @@ struct MatchListView: View {
         VStack {
             if !matchManager.matchModels.isEmpty {
                 // Data loaded, display list
-                List(matchManager.matchModels, id: \.bookmaker.bookmakerKey) { matchModel in
+                List(matchManager.matchModels, id: \.id) { matchModel in
                     NavigationLink(destination: MatchView(matchModel: matchModel)) {
                         MatchRow(matchModel: matchModel)
                     }
