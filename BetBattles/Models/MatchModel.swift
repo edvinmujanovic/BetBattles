@@ -5,26 +5,40 @@
 //  Created by Edvin Mujanovic on 2024-03-07.
 //
 
+
 import Foundation
 import Observation
 
-class MatchModel {
-    let bookmakerKey: String
-    let bookmakerTitle: String
-    let lastUpdate: String
-    let markets: [Market]
-
-    init(bookmaker: MatchData.Bookmaker, baseUrl: String) {
-        bookmakerKey = bookmaker.key
-        bookmakerTitle = bookmaker.title
-        lastUpdate = bookmaker.lastUpdate
-        markets = bookmaker.markets.map { Market(model: $0, baseUrl: baseUrl) }
+class MatchModel: Identifiable {
+    let homeTeam: String
+    let awayTeam: String
+    let bookmaker: Bookmaker  // Include a reference to Bookmaker
+    
+    init(matchData: MatchData, baseUrl: String) {
+        homeTeam = matchData.homeTeam
+        awayTeam = matchData.awayTeam
+        bookmaker = Bookmaker(bookmaker: matchData.bookmakers[0], baseUrl: baseUrl)
     }
 }
 
 extension MatchModel {
     @Observable
-    class Market {
+    class Bookmaker {
+        let bookmakerKey: String
+        let bookmakerTitle: String
+        let lastUpdate: String
+        let markets: [Market]
+
+        init(bookmaker: MatchData.Bookmaker, baseUrl: String) {
+            bookmakerKey = bookmaker.key
+            bookmakerTitle = bookmaker.title
+            lastUpdate = bookmaker.lastUpdate
+            markets = bookmaker.markets.map { Market(model: $0, baseUrl: baseUrl) }
+        }
+    }
+
+    @Observable
+    class Market: Identifiable {
         let marketKey: String
         let lastUpdate: String
         let outcomes: [Outcome]
@@ -35,11 +49,9 @@ extension MatchModel {
             outcomes = model.outcomes.map { Outcome(model: $0, baseUrl: baseUrl) }
         }
     }
-}
 
-extension MatchModel.Market {
     @Observable
-    class Outcome {
+    class Outcome: Identifiable {
         let outcomeName: String
         let price: Double
 
@@ -49,4 +61,3 @@ extension MatchModel.Market {
         }
     }
 }
-

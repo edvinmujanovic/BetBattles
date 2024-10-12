@@ -9,31 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var matchManager = Match()
+    @State private var selectedMatch: MatchModel?
 
     var body: some View {
-        VStack {
-            if matchManager.matchModels != nil {
-                // Data loaded, display content
-                Text("DATA LOADED!!")
-            } else {
-                // Data not loaded, display try again button
-                Button("Try Again") {
-                    Task {
-                        await loadMatchData()
+        NavigationView {
+            VStack {
+                if !matchManager.matchModels.isEmpty {
+                    // Data loaded, display list
+                    List(matchManager.matchModels, id: \.bookmaker.bookmakerKey) { matchModel in
+                        NavigationLink(destination: MatchView(matchModel: matchModel)) {
+                            MatchRow(matchModel: matchModel)
+                        }
                     }
+                } else {
+                    // Data not loaded, display try again button
+                    Button("Try Again") {
+                        Task {
+                            await loadMatchData()
+                        }
+                    }
+                    .buttonStyle(CustomButtonStyle())
                 }
-                .padding()
-                .background(.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
             }
+            .padding()
         }
-        .padding()
         .onAppear {
             Task {
                 await loadMatchData()
             }
         }
+        .navigationTitle("BetBattles")
     }
 
     private func loadMatchData() async {
@@ -42,11 +47,5 @@ struct ContentView: View {
         } catch {
             print("Failed to load match data: \(error)")
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

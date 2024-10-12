@@ -17,6 +17,7 @@
 		26034F5C2B9A4C5600FF4490 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26034F5B2B9A4C5600FF4490 /* APIManager.swift */; };
 		26034F5E2B9A4C6900FF4490 /* MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26034F5D2B9A4C6900FF4490 /* MatchData.swift */; };
 		26034F602B9A4C7800FF4490 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26034F5F2B9A4C7800FF4490 /* MatchModel.swift */; };
+		2634A96F2B9B84DD0081E474 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2634A96E2B9B84DD0081E474 /* MatchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 /* Begin PBXFileReference section */
 		26034F2A2B9A49C000FF4490 /* BetBattles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetBattles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26034F2D2B9A49C000FF4490 /* BetBattlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetBattlesApp.swift; sourceTree = "<group>"; };
-		26034F2F2B9A49C000FF4490 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		26034F2F2B9A49C000FF4490 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../ContentView.swift; sourceTree = "<group>"; };
 		26034F312B9A49C200FF4490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26034F342B9A49C200FF4490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26034F3A2B9A49C200FF4490 /* BetBattlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetBattlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +51,7 @@
 		26034F5B2B9A4C5600FF4490 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		26034F5D2B9A4C6900FF4490 /* MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchData.swift; sourceTree = "<group>"; };
 		26034F5F2B9A4C7800FF4490 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
+		2634A96E2B9B84DD0081E474 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,6 @@
 				26034F592B9A4B7200FF4490 /* Views */,
 				26034F582B9A4B6B00FF4490 /* Models */,
 				26034F2D2B9A49C000FF4490 /* BetBattlesApp.swift */,
-				26034F2F2B9A49C000FF4490 /* ContentView.swift */,
 				26034F312B9A49C200FF4490 /* Assets.xcassets */,
 				26034F332B9A49C200FF4490 /* Preview Content */,
 				26034F5B2B9A4C5600FF4490 /* APIManager.swift */,
@@ -148,6 +149,8 @@
 		26034F592B9A4B7200FF4490 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26034F2F2B9A49C000FF4490 /* ContentView.swift */,
+				2634A96E2B9B84DD0081E474 /* MatchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				26034F602B9A4C7800FF4490 /* MatchModel.swift in Sources */,
 				26034F5E2B9A4C6900FF4490 /* MatchData.swift in Sources */,
 				26034F302B9A49C000FF4490 /* ContentView.swift in Sources */,
+				2634A96F2B9B84DD0081E474 /* MatchView.swift in Sources */,
 				26034F2E2B9A49C000FF4490 /* BetBattlesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
