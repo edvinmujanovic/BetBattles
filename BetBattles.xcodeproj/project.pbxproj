@@ -19,6 +19,8 @@
 		26034F602B9A4C7800FF4490 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26034F5F2B9A4C7800FF4490 /* MatchModel.swift */; };
 		2634A96F2B9B84DD0081E474 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2634A96E2B9B84DD0081E474 /* MatchView.swift */; };
 		26B9EE7D2CBA789E00945F3E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE7C2CBA789900945F3E /* HomeView.swift */; };
+		26B9EE7F2CBC84A700945F3E /* MatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE7E2CBC84A000945F3E /* MatchListView.swift */; };
+		26B9EE832CBC84DE00945F3E /* MatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE822CBC84D700945F3E /* MatchRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		26034F5F2B9A4C7800FF4490 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		2634A96E2B9B84DD0081E474 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		26B9EE7C2CBA789900945F3E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		26B9EE7E2CBC84A000945F3E /* MatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListView.swift; sourceTree = "<group>"; };
+		26B9EE822CBC84D700945F3E /* MatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		26034F592B9A4B7200FF4490 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26B9EE822CBC84D700945F3E /* MatchRow.swift */,
+				26B9EE7E2CBC84A000945F3E /* MatchListView.swift */,
 				26B9EE7C2CBA789900945F3E /* HomeView.swift */,
 				26034F2F2B9A49C000FF4490 /* ContentView.swift */,
 				2634A96E2B9B84DD0081E474 /* MatchView.swift */,
@@ -298,6 +304,8 @@
 			files = (
 				26034F5C2B9A4C5600FF4490 /* APIManager.swift in Sources */,
 				26B9EE7D2CBA789E00945F3E /* HomeView.swift in Sources */,
+				26B9EE832CBC84DE00945F3E /* MatchRow.swift in Sources */,
+				26B9EE7F2CBC84A700945F3E /* MatchListView.swift in Sources */,
 				26034F602B9A4C7800FF4490 /* MatchModel.swift in Sources */,
 				26034F5E2B9A4C6900FF4490 /* MatchData.swift in Sources */,
 				26034F302B9A49C000FF4490 /* ContentView.swift in Sources */,
