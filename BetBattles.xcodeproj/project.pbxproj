@@ -21,6 +21,7 @@
 		26B9EE7D2CBA789E00945F3E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE7C2CBA789900945F3E /* HomeView.swift */; };
 		26B9EE7F2CBC84A700945F3E /* MatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE7E2CBC84A000945F3E /* MatchListView.swift */; };
 		26B9EE832CBC84DE00945F3E /* MatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE822CBC84D700945F3E /* MatchRow.swift */; };
+		26B9EE882CC193F400945F3E /* MockMatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B9EE872CC193ED00945F3E /* MockMatchData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		26B9EE7C2CBA789900945F3E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26B9EE7E2CBC84A000945F3E /* MatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListView.swift; sourceTree = "<group>"; };
 		26B9EE822CBC84D700945F3E /* MatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRow.swift; sourceTree = "<group>"; };
+		26B9EE872CC193ED00945F3E /* MockMatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMatchData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		26034F5A2B9A4C3500FF4490 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				26B9EE872CC193ED00945F3E /* MockMatchData.swift */,
 				26034F5D2B9A4C6900FF4490 /* MatchData.swift */,
 			);
 			path = Data;
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26034F5C2B9A4C5600FF4490 /* APIManager.swift in Sources */,
+				26B9EE882CC193F400945F3E /* MockMatchData.swift in Sources */,
 				26B9EE7D2CBA789E00945F3E /* HomeView.swift in Sources */,
 				26B9EE832CBC84DE00945F3E /* MatchRow.swift in Sources */,
 				26B9EE7F2CBC84A700945F3E /* MatchListView.swift in Sources */,

@@ -11,13 +11,49 @@ import Observation
 @Observable
 class Match {
     var matchModels: [MatchModel] = []
+    
+    // Flag to toggle between real API and mock data, set to false when using real API data
+    let useMockData = true
 
     // Load matches with filtering and duplicate handling
     func loadMatch() async throws {
+        if useMockData {
+            // Load from mock data
+            loadMockData()
+        } else {
+            // Load from real API
+            try await loadRealMatchData()
+        }
+    }
+    
+    // Function to load mock data
+    private func loadMockData() {
+        let mockMatches = MockMatchData.mockMatches //ignore error?
+
+        var seenMatches = Set<String>()  // Set to track unique match IDs based on teams
+        
+        for matchInfo in mockMatches {
+            // Create a unique match identifier based on home and away team
+            let uniqueMatchId = "\(matchInfo.homeTeam) vs \(matchInfo.awayTeam)"
+            
+            if !seenMatches.contains(uniqueMatchId) {
+                if let firstBookmaker = matchInfo.bookmakers.first {
+                    let matchModel = MatchModel(matchData: matchInfo, baseUrl: "")
+                    matchModels.append(matchModel)
+                    seenMatches.insert(uniqueMatchId)  // Mark the match as seen
+                }
+            }
+        }
+        
+        print("Loaded mock soccer events!")
+    }
+    
+    // Function to load real match data from API
+    private func loadRealMatchData() async throws {
         let baseUrl = "https://api.the-odds-api.com/v4/sports/upcoming/odds/"
         let apiKey = ProcessInfo.processInfo.environment["ODDS_API_KEY"] ?? ""
         let matchUrl = "?regions=eu&markets=h2h&apiKey=\(apiKey)"
- 
+        
         guard let url = URL(string: baseUrl + matchUrl) else {
             return
         }
