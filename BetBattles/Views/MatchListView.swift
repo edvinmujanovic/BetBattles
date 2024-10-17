@@ -29,16 +29,17 @@ struct MatchListView: View {
             }
             .navigationTitle("Upcoming Matches")
 
-            // Add the round profile button
+            // Add the round profile and history buttons
             VStack {
                 Spacer()  // Push content up
                 HStack {
+                    // Profile button on the left
                     VStack {
                         ZStack {
                             Circle()
                                 .fill(Color.gray.opacity(0.3))  // Button background
                                 .frame(width: 60, height: 60)  // Circle size
-                            
+
                             NavigationLink(destination: ProfileSettingsView()) {
                                 Image(systemName: "person.crop.circle")  // Profile icon (system)
                                     .resizable()
@@ -47,8 +48,26 @@ struct MatchListView: View {
                             }
                         }
                     }
-                    .padding(20)  // Padding to position it from the edges
-                    Spacer()  // Push to the left side
+                    .padding(.leading, 20)  // Padding from the left edge
+
+                    Spacer()  // Space between buttons
+
+                    // History button on the right
+                    VStack {
+                        ZStack {
+                            Circle()
+                                .fill(Color.gray.opacity(0.3))  // Button background
+                                .frame(width: 60, height: 60)  // Circle size
+
+                            NavigationLink(destination: HistoryView()) {
+                                Image(systemName: "clock.arrow.circlepath")  // History icon (system)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                            }
+                        }
+                    }
+                    .padding(.trailing, 20)  // Padding from the right edge
                 }
             }
         }

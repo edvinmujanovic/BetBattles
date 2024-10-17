@@ -15,8 +15,17 @@ class Match {
     // Flag to toggle between real API and mock data, set to false when using real API data
     let useMockData = true
 
+    // Flag to track whether data has already been loaded
+    var dataLoaded = false
+
     // Load matches with filtering and duplicate handling
     func loadMatch() async throws {
+        // Only load data if it hasn't been loaded yet
+        if dataLoaded {
+            print("Match data already loaded. Skipping re-fetch.")
+            return
+        }
+
         if useMockData {
             // Load from mock data
             loadMockData()
@@ -24,6 +33,9 @@ class Match {
             // Load from real API
             try await loadRealMatchData()
         }
+
+        // Set the flag to indicate data has been loaded
+        dataLoaded = true
     }
     
     // Function to load mock data
@@ -91,5 +103,12 @@ class Match {
         } catch {
             print("Error decoding MatchData:", error)
         }
+    }
+
+    // Optional: Method to force reload data if needed (for Try Again)
+    func reloadMatchData() async throws {
+        dataLoaded = false // Reset the flag
+        matchModels.removeAll() // Clear the existing data
+        try await loadMatch()
     }
 }
